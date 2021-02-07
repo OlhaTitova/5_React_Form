@@ -17,7 +17,6 @@ export function addToCart(item) {
 
 
 export const getProductWithCart = () => {
-
     return JSON.parse(localStorage.getItem('cardList')) || {};
 }
 
@@ -29,4 +28,8 @@ export function removeProductCart(itemId) {
     delete cart[itemId]
     localStorage.setItem('cardList', JSON.stringify(cart));
     return cart;
+}
+
+export function removeAllCartLS() {
+    localStorage.removeItem('cardList');
 }

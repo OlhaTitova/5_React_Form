@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import { CartList } from "../components/CartList/CartList";
 import { FormOrderRedux } from "../components/FormOrder/FormOrder";
 import { connect } from "react-redux";
-import { getCartList, selectCart } from "../store/cart";
+import { getCartList, removeAllCartProducts, selectCart } from "../store/cart";
 
 
 const mapStateToProps = (state) => ({
     cartProducts: selectCart(state),
 })
 
-export const CartPage = connect(mapStateToProps, { getCartList })(({ cartProducts, getCartList }) => {
+export const CartPage = connect(mapStateToProps, { getCartList, removeAllCartProducts })(({ cartProducts, getCartList, removeAllCartProducts }) => {
 
 
     const onSubmit = (formData) => {
         const orderUser = { ...formData };
         orderUser.products = cartProducts;
         console.log(orderUser);
-        localStorage.removeItem('cardList');
+        removeAllCartProducts();
         getCartList();
     }
 

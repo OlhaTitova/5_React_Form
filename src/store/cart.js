@@ -1,10 +1,13 @@
 import { getProductWithCart, removeProductCart } from "../utils/cart";
+import { removeAllCartLS } from '../utils/cart'
+
 
 
 const GET_CART_PRODUCTS = 'GET_CART_PRODUCTS';
 const REMOVE_PRODUCT_WITH_CART = 'REMOVE_PRODUCT_WITH_CART';
 const SHOW_MODAL_DELETE = 'SHOW_MODAL_DELETE';
 const CLOSE_MODAL_DELETE = 'CLOSE_MODAL_DELETE';
+const REMOVE_ALL_CART = 'REMOVE_ALL_CART';
 
 export const MODULE_NAME = 'cart';
 export const selectCart = state => state[MODULE_NAME].cartProducts;
@@ -26,6 +29,11 @@ export function cartReducer(state = initialState, action) {
                 cartProducts: action.payload,
             }
         case REMOVE_PRODUCT_WITH_CART:
+            return {
+                ...state,
+                cartProducts: action.payload,
+            }
+        case REMOVE_ALL_CART:
             return {
                 ...state,
                 cartProducts: action.payload,
@@ -54,6 +62,10 @@ export const removeCartProducts = (payload) => ({
     type: REMOVE_PRODUCT_WITH_CART,
     payload
 });
+export const removeAllCart = (payload) => ({
+    type: REMOVE_ALL_CART,
+    payload
+});
 
 export const getCartList = () => (dispatch) => {
     const cartListItems = getProductWithCart();
@@ -73,5 +85,10 @@ export const modalConfirmDelete = (productId) => (dispatch) => {
     const newCart = removeProductCart(productId)
     dispatch(removeCartProducts(newCart))
     dispatch(closeModalDelete())
+}
+
+export const removeAllCartProducts = () => (dispatch) => {
+    removeAllCartLS()
+    dispatch(removeAllCart())
 }
 
