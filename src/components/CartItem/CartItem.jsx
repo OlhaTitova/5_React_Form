@@ -4,7 +4,7 @@ import { Button } from "../Button/Button";
 import '../Product/Product.scss';
 import './CartItem.scss';
 import { useDispatch } from "react-redux";
-import { showModalDelete } from "../../store/cart";
+import { showModalDelete } from "../../store/cart/cart";
 
 export const CartItem = ({ product, count }) => {
 

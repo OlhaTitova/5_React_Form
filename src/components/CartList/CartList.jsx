@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CartItem } from '../CartItem/CartItem';
-import { getCartList, modalConfirmDelete, selectCart, selectModalDel, closeModalDelete } from '../../store/cart';
+import { getCartList, modalConfirmDelete, selectCart, selectModalDel, closeModalDelete } from '../../store/cart/cart';
 import { ModalDeleteCart } from '../ModalDeleteCart/ModalDeleteCart';
 import { connect } from 'react-redux';
 

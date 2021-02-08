@@ -1,4 +1,4 @@
-import { addToCart } from "../utils/cart";
+import { addToCart } from "../../utils/cart";
 
 
 const SHOW_MODAL_ADD_TO_CART = 'SHOW_MODAL_ADD_TO_CART';

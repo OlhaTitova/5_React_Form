@@ -1,4 +1,5 @@
-import { getProductFavorite } from "../utils/favorite";
+import { getProductFavorite } from "../../utils/favorite";
+
 
 const FAVORITE_PRODUCTS = 'FAVORITE_PRODUCTS';
 

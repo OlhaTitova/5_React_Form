@@ -4,8 +4,8 @@ import { ModalAddCart } from '../ModalAddCart/ModalAddCart';
 import { Product } from '../Product/Product';
 import '../ProductList/ProductList.scss';
 import { connect } from "react-redux";
-import { closeModalAdd, modalConfirmAddToCart, selectModalAdd } from '../../store/modalAdd';
-import { getFavoriteList, selectFavorite } from '../../store/favorite';
+import { selectFavorite, getFavoriteList } from '../../store/favorite/favorite';
+import { closeModalAdd, modalConfirmAddToCart, selectModalAdd } from '../../store/modalAdd/modalAdd';
 
 const mapStateToProps = (state) => ({
     favorites: selectFavorite(state),

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CartList } from "../components/CartList/CartList";
 import { FormOrderRedux } from "../components/FormOrder/FormOrder";
 import { connect } from "react-redux";
-import { getCartList, removeAllCartProducts, selectCart } from "../store/cart";
+import { getCartList, removeAllCartProducts, selectCart } from "../store/cart/cart";
 
 
 const mapStateToProps = (state) => ({
@@ -11,7 +11,6 @@ const mapStateToProps = (state) => ({
 })
 
 export const CartPage = connect(mapStateToProps, { getCartList, removeAllCartProducts })(({ cartProducts, getCartList, removeAllCartProducts }) => {
-
 
     const onSubmit = (formData) => {
         const orderUser = { ...formData };
@@ -34,5 +33,7 @@ export const CartPage = connect(mapStateToProps, { getCartList, removeAllCartPro
 })
 
 CartPage.propTypes = {
-    product: PropTypes.object,
+    getCartList: PropTypes.func,
+    cartProducts: PropTypes.object,
+    removeAllCartProducts: PropTypes.func
 }

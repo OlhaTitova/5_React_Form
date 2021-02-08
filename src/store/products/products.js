@@ -1,4 +1,4 @@
-import { getServerData } from "./getServerData";
+import { getServerData } from "../serverData/getServerData";
 
 
 const GET_PRODUCTS = "GET_PRODUCTS";

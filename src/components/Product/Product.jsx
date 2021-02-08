@@ -6,9 +6,8 @@ import { FavoriteButton } from '../FavoriteButton/FavoriteButton';
 import { EMPTY_HEART, FULL_HEART } from '../../utils/ico';
 import { isFavorite } from '../../utils/favorite';
 import { connect } from "react-redux";
-import { showModalAddToCart } from '../../store/modalAdd';
-import { selectFavorite, toggleFavorite } from '../../store/favorite';
-
+import { selectFavorite, toggleFavorite } from '../../store/favorite/favorite';
+import { showModalAddToCart } from '../../store/modalAdd/modalAdd';
 
 const mapStateToProps = (state) => ({
   favoriteProducts: selectFavorite(state)

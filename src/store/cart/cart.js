@@ -1,5 +1,5 @@
-import { getProductWithCart, removeProductCart } from "../utils/cart";
-import { removeAllCartLS } from '../utils/cart'
+import { getProductWithCart, removeProductCart } from "../../utils/cart";
+import { removeAllCartLS } from '../../utils/cart'
 
 
 

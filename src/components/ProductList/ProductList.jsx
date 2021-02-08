@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { Product } from "../Product/Product";
 import { ModalAddCart } from "../ModalAddCart/ModalAddCart";
 import './ProductList.scss';
-import { closeModalAdd, modalConfirmAddToCart, selectModalAdd } from "../../store/modalAdd";
 import { connect } from "react-redux";
-import { getProductList, selectProducts } from "../../store/products";
+import { closeModalAdd, modalConfirmAddToCart, selectModalAdd } from "../../store/modalAdd/modalAdd";
+import { getProductList, selectProducts } from "../../store/products/products";
+
 
 
 const mapStateToProps = (state) => ({
